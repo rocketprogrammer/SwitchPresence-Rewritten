@@ -1,4 +1,4 @@
-COMPONENTS := Server Manager Client
+COMPONENTS := Server
 TOPTARGETS := all clean
 
 .PHONY: $(TOPTARGETS) $(COMPONENTS)
@@ -19,8 +19,6 @@ all: $(COMPONENTS)
 	touch $(OUT_DIR)/$(OUT_SERVER_DIR)/atmosphere/contents/0100000000000464/flags/boot2.flag
 	cp $(IN_SERVER_DIR)SwitchPresence-Rewritten.nsp 		$(OUT_DIR)/$(OUT_SERVER_DIR)/atmosphere/contents/0100000000000464/exefs.nsp
 	cp $(IN_SERVER_DIR)toolbox.json 		$(OUT_DIR)/$(OUT_SERVER_DIR)/atmosphere/contents/0100000000000464/toolbox.json
-#	Manager files
-	cp $(IN_MANAGER_DIR) 		$(OUT_DIR)/$(OUT_MANAGER_DIR)/SwitchPresence-Rewritten-Manager.nro
 #	Zipping up files
 	@echo Zipping files now...
 	cd $(TOPDIR)/$(OUT_DIR)/$(OUT_SERVER_DIR); 	zip -r $(TOPDIR)/$(OUT_DIR)/Sysmodule.zip ./;	cd $(TOPDIR);
